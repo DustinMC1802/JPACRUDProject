@@ -1,5 +1,6 @@
 package com.skilldistillery.jpafencingclubs.entities;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -15,6 +16,15 @@ public class FencingClub {
 	private int id;
 	
 	private String name;
+	
+	private int rank;
+	
+	private String state;
+	
+	private String city;
+	
+	@Column(name = "rated_fencers")
+	private int ratedFencers;
 
 	//Default Constructor
 	
@@ -39,9 +49,42 @@ public class FencingClub {
 		this.name = name;
 	}
 
+	public int getRank() {
+		return rank;
+	}
+
+	public void setRank(int rank) {
+		this.rank = rank;
+	}
+
+	public String getState() {
+		return state;
+	}
+
+	public void setState(String state) {
+		this.state = state;
+	}
+
+	public String getCity() {
+		return city;
+	}
+
+	public void setCity(String city) {
+		this.city = city;
+	}
+
+	public int getRatedFencers() {
+		return ratedFencers;
+	}
+
+	public void setRatedFencers(int ratedFencers) {
+		this.ratedFencers = ratedFencers;
+	}
+
 	@Override
 	public String toString() {
-		return "FencingClub [id=" + id + ", name=" + name + "]";
+		return "FencingClub [id=" + id + ", name=" + name + ", rank=" + rank + ", state=" + state + ", city=" + city
+				+ ", ratedFencers=" + ratedFencers + "]";
 	}
 	
 
