@@ -1,5 +1,7 @@
 package com.skilldistillery.jpafencingclubs.data;
 
+import java.util.List;
+
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.transaction.Transactional;
@@ -18,6 +20,12 @@ public class FencingClubDAOImpl implements FencingClubDAO {
 	@Override
 	public FencingClub findById(int clubId) {
 		return em.find(FencingClub.class, clubId);
+	}
+
+	@Override
+	public List<FencingClub> findAll() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }
