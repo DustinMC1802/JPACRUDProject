@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.skilldistillery.jpafencingclubs.data.FencingClubDAO;
 import com.skilldistillery.jpafencingclubs.entities.FencingClub;
@@ -31,18 +32,18 @@ public class FencingClubController {
 //		//	  return "WEB-INF/index.jsp";
 //	   return "index"; // if using a ViewResolver.
 //	}
-	@RequestMapping(path="getClubById.do")
+	@RequestMapping(path="getClubByID.do", method = RequestMethod.GET)
 	public String showClub(Integer clubId, Model model) {
 		FencingClub club = dao.findById(clubId);
 		model.addAttribute("club", club);
-		return "club/show";
+		return "fencingClub/show";
 	}
 	
 	@RequestMapping(path="getClubByState.do")
 	public String showClubsByState(String clubState, Model model) {
 		FencingClub club = dao.findByState(clubState);
 		model.addAttribute("club", club);
-		return "club/show";
+		return "fencingClub/show";
 	}
 	
 	@RequestMapping(path="addClub.do")

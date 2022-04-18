@@ -15,10 +15,9 @@
 
 	<div>
 		<h5>${club.name}</h5>
-		<p>${club.state}</p>
-		<p>${club.city}</p>
-		<p>${club.rank}</p>
-		<p>${club.ratedFencers}</p>
+		<p>${club.city} ${club.state}</p>
+		Rank: <p>${club.rank}</p>
+		Rated Fencers: <p>${club.ratedFencers}</p>
 	</div>
 </div>
 

@@ -34,13 +34,13 @@
 		
 		<br>
 		<form action="updateClub.do" method="POST">
-			Update a Fencing Club: <input type="text" name="fid" /> <input
+			Update a Fencing Club: <input type="text" name="clubId" /> <input
 				type="submit" value="Enter Fencing Club ID" />
 		</form>
 		<br>
 		
 		<form action="removeClub.do" method="POST">
-			Remove a Fencing Club: <input type="text" name="fid" /> <input
+			Remove a Fencing Club: <input type="text" name="clubId" /> <input
 				type="submit" value="Enter Fencing Club ID" />
 		</form>
 		<br>
