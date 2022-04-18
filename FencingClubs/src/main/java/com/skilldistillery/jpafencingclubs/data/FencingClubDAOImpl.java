@@ -21,6 +21,10 @@ public class FencingClubDAOImpl implements FencingClubDAO {
 	public FencingClub findById(int id) {
 		return em.find(FencingClub.class, id);
 	}
+	@Override
+	public FencingClub findByState(String clubState) {
+		return em.find(FencingClub.class, clubState);
+	}
 
 	@Override
 	public List<FencingClub> findAll() {

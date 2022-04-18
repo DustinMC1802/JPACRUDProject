@@ -13,12 +13,12 @@
 		<h1>Find a Fencing Club!</h1>
 
 		<form action="getClubByID.do" method="GET">
-			Find a Fencing Club by Id: <input type="text" name="fid" /> <input
+			Find a Fencing Club by Id: <input type="text" name="clubId" /> <input
 				type="submit" value="Show Fencing Club" />
 		</form>
 		<br>
 		<form action="getClubByState.do" method="GET">
-			Find a Fencing Club by State: <input type="text" name="fstate" /> <input
+			Find a Fencing Club by State: <input type="text" name="clubState" /> <input
 				type="submit" value="Show Fencing Club" />
 		</form>
 		<br>

@@ -32,8 +32,36 @@ public class FencingClubController {
 //	   return "index"; // if using a ViewResolver.
 //	}
 	@RequestMapping(path="getClubById.do")
-	public String showClub(Integer fid, Model model) {
-		FencingClub club = dao.findById(fid);
+	public String showClub(Integer clubId, Model model) {
+		FencingClub club = dao.findById(clubId);
+		model.addAttribute("club", club);
+		return "club/show";
+	}
+	
+	@RequestMapping(path="getClubByState.do")
+	public String showClubsByState(String clubState, Model model) {
+		FencingClub club = dao.findByState(clubState);
+		model.addAttribute("club", club);
+		return "club/show";
+	}
+	
+	@RequestMapping(path="addClub.do")
+	public String addClub(FencingClub club, Model model) {
+		club = dao.create(club);
+		model.addAttribute("club", club);
+		return "club/show";
+	}
+	
+	@RequestMapping(path="updateClub.do")
+	public String updateClub(Integer clubId, Model model) {
+		FencingClub club = dao.update(clubId, null);
+		model.addAttribute("club", club);
+		return "club/show";
+	}
+	
+	@RequestMapping(path="removeClub.do")
+	public String deleteClub(Integer clubId, Model model) {
+		boolean club = dao.destroy(clubId);
 		model.addAttribute("club", club);
 		return "club/show";
 	}
