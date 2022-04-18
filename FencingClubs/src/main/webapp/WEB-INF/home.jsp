@@ -12,26 +12,43 @@
 	<main class="container-fluid">
 		<h1>Find a Fencing Club!</h1>
 
-		<form action="getClub.do" method="GET">
-			Find a Fencing Club by Name: <input type="text" name="fid" /> <input
+		<form action="getClubByID.do" method="GET">
+			Find a Fencing Club by Id: <input type="text" name="fid" /> <input
 				type="submit" value="Show Fencing Club" />
 		</form>
 		<br>
-		<form action="getClub.do" method="GET">
-			Find a Fencing Club by State: <input type="text" name="fid" /> <input
+		<form action="getClubByState.do" method="GET">
+			Find a Fencing Club by State: <input type="text" name="fstate" /> <input
 				type="submit" value="Show Fencing Club" />
 		</form>
 		<br>
 
-		<form action="getClub.do" method="GET">
+<!-- 		<form action="getClub.do" method="GET">
 			Find a Fencing Club by City: <input type="text" name="fid" /> <input
 				type="submit" value="Show Fencing Club" />
+		</form> -->
+		
+		<form action="addClub.do" method="POST">
+			 <button type="submit">Add a Fencing Club</button>
+		</form>
+		
+		<br>
+		<form action="updateClub.do" method="POST">
+			Update a Fencing Club: <input type="text" name="fid" /> <input
+				type="submit" value="Enter Fencing Club ID" />
+		</form>
+		<br>
+		
+		<form action="removeClub.do" method="POST">
+			Remove a Fencing Club: <input type="text" name="fid" /> <input
+				type="submit" value="Enter Fencing Club ID" />
 		</form>
 		<br>
 
 		<table class="table table-striped">
 			<thead class="table-dark">
 				<tr>
+					<th>ID</th>
 					<th>Name</th>
 					<th>State</th>
 					<th>City</th>
@@ -40,9 +57,10 @@
 			<tbody>
 				<c:forEach var="f" items="${clubs}">
 					<tr>
-						<td>${f.getName}</td>
-						<td>${f.getState}</td>
-						<td>${f.getCity}</td>
+						<td>${f.id}</td>
+						<td><a href="getClubByID.do?fid=${f.id}">${f.name}</a></td>
+						<td>${f.state}</td>
+						<td>${f.city}</td>
 					</tr>
 				</c:forEach>
 			</tbody>

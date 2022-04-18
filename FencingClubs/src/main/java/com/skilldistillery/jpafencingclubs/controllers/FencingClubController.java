@@ -31,5 +31,11 @@ public class FencingClubController {
 //		//	  return "WEB-INF/index.jsp";
 //	   return "index"; // if using a ViewResolver.
 //	}
+	@RequestMapping(path="getClubById.do")
+	public String showClub(Integer fid, Model model) {
+		FencingClub club = dao.findById(fid);
+		model.addAttribute("club", club);
+		return "club/show";
+	}
 
 }
