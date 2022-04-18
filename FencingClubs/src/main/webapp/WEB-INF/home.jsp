@@ -12,36 +12,51 @@
 	<main class="container-fluid">
 		<h1>Find a Fencing Club!</h1>
 
+		<h3>Find a Fencing Club by Id</h3>
 		<form action="getClubByID.do" method="GET">
-			Find a Fencing Club by Id: <input type="text" name="clubId" /> <input
-				type="submit" value="Show Fencing Club" />
+			<input type="text" name="clubId" /> <input type="submit"
+				value="Show Fencing Club" />
 		</form>
 		<br>
+		<h3>Find a Fencing Club by State</h3>
 		<form action="getClubByState.do" method="GET">
-			Find a Fencing Club by State: <input type="text" name="clubState" /> <input
-				type="submit" value="Show Fencing Club" />
+			<input type="text" name="clubState" /> <input type="submit"
+				value="Show Fencing Club" />
 		</form>
 		<br>
 
-<!-- 		<form action="getClub.do" method="GET">
+		<!-- 		<form action="getClub.do" method="GET">
 			Find a Fencing Club by City: <input type="text" name="fid" /> <input
 				type="submit" value="Show Fencing Club" />
 		</form> -->
-		
-		<form action="addClub.do" method="POST">
+
+		<!-- <form action="addClub.do" method="POST">
 			 <button type="submit">Add a Fencing Club</button>
+		</form> -->
+		<h3>Add a Fencing Club</h3>
+		<form action="addClub.do" method="POST">
+			Add a Name: <input type="text" name="clubName" /> 
+			<br> Add a City: <input type="text" name="clubCity" /> 
+			<br> Add a State: <input type="text" name="clubState" /> 
+			<br> Add a Rank: <input type="text" name="clubRank" /> 
+			<br> Add number of Rated Fencers: <input type="text" name="clubFencers" /> 
+			<br>
+			<input
+				type="submit" value="Add Club" />
 		</form>
-		
+
 		<br>
+		<h3>Add a Fencing Club</h3>
 		<form action="updateClub.do" method="POST">
-			Update a Fencing Club: <input type="text" name="clubId" /> <input
-				type="submit" value="Enter Fencing Club ID" />
+			Enter Fencing Club ID: <input type="text" name="clubId" /> <input
+				type="submit" value="Submit" />
 		</form>
 		<br>
-		
+
+		<h3>Remove a Fencing Club</h3>
 		<form action="removeClub.do" method="POST">
-			Remove a Fencing Club: <input type="text" name="clubId" /> <input
-				type="submit" value="Enter Fencing Club ID" />
+			Enter Fencing Club ID: <input type="text" name="clubId" /> <input
+				type="submit" value="Submit" />
 		</form>
 		<br>
 

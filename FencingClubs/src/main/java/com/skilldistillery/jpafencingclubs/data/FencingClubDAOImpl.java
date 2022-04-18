@@ -22,13 +22,14 @@ public class FencingClubDAOImpl implements FencingClubDAO {
 		return em.find(FencingClub.class, id);
 	}
 	@Override
-	public FencingClub findByState(String clubState) {
-		return em.find(FencingClub.class, clubState);
+	public List<FencingClub> findByState(String clubState) {
+		String query = "SELECT c FROM Fencing Club c WHERE c.state = 'clubState'";
+		return em.createQuery(query, FencingClub.class).getResultList();
 	}
 
 	@Override
 	public List<FencingClub> findAll() {
-		String query = "SELECT f FROM FencingClub f";
+		String query = "SELECT c FROM FencingClub c";
 		return em.createQuery(query, FencingClub.class).getResultList();
 	}
 

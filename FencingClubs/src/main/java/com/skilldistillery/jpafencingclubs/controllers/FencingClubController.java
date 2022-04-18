@@ -39,18 +39,18 @@ public class FencingClubController {
 		return "fencingClub/show";
 	}
 	
-	@RequestMapping(path="getClubByState.do")
+	@RequestMapping(path="getClubByState.do", method = RequestMethod.GET)
 	public String showClubsByState(String clubState, Model model) {
-		FencingClub club = dao.findByState(clubState);
-		model.addAttribute("club", club);
+		List<FencingClub> clubs = dao.findByState(clubState);
+		model.addAttribute("club", clubs);
 		return "fencingClub/show";
 	}
 	
-	@RequestMapping(path="addClub.do")
+	@RequestMapping(path="addClub.do", method = RequestMethod.POST)
 	public String addClub(FencingClub club, Model model) {
 		club = dao.create(club);
 		model.addAttribute("club", club);
-		return "club/show";
+		return "home";
 	}
 	
 	@RequestMapping(path="updateClub.do")
